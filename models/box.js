@@ -1,13 +1,14 @@
-const {sequelize, DataTypes, Model} = require('../db')
-class Box extends Model {
 
-}
+const db= require('../db')
+
+const { DataTypes, Model} = require('sequelize')
+class Box extends Model {}
 Box.init({
     box_count: DataTypes.INTEGER,
     staging_date: DataTypes.DATEONLY
 }, {
-    sequelize,
+    sequelize:db,
     timestamps: false
 })
 
-module.exports = {Box}
+module.exports = Box;

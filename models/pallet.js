@@ -1,4 +1,6 @@
-const { sequelize, DataTypes, Model } = require("./db");
+const db = require('../db')
+
+const { DataTypes, Model} = require('sequelize')
 
 class Pallet extends Model {}
 
@@ -8,9 +10,8 @@ Pallet.init({
     type_of_pallet:DataTypes.STRING
   },
   {
-    sequelize,
+    sequelize:db,
     timestamps: false,
-  }
-);
+  });
 
-module.exports = { Pallete };
+module.exports = Pallet;

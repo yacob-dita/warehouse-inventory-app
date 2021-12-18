@@ -13,7 +13,7 @@ Warehouse.init({
     image: DataTypes.STRING   
 }, {
     sequelize: db,
-    timestamps: false
+    timestamps: false,
 });
 
 module.exports = Warehouse;
