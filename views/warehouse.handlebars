@@ -1,0 +1,34 @@
+<header id ="header-container" class="container-fluid" > <nav class="navbar navbar-expand-lg navbar-black bg-dark w-100">
+  <a class="navbar-brand" href="#">Verizon</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/warehouses">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">About </a>
+      <a class="nav-item nav-link" href="#">Contact Us</a>
+      <a class="nav-item nav-link " href="#">Login</a>
+    </div>
+  </div>
+</nav></header>
+
+<div class="container">
+    <div id="singlewarehouse" > 
+        	<h2>{{warehouse.name}}</h2>
+	<img class="item-img" src="{{warehouse.image}}" />
+    </div>    
+	<div id="all-btns">
+		<button id='details-btn' class="btn-dark">Show Other warehouse</button>
+		<button id='pallet-btn' class="btn-dark">Show Pallets</button>       
+        <button id='allwarehouse-btn' class="btn-dark"><a class="btn" href="/warehouses">Show All warehouses</a></button>
+        <button id ='delete-btn'class="btn-danger">Delete Warehouse</button>
+		{{!-- <h3>Likes: <span id ="like-counter">{{warehouse.likes}}</span></h3>
+	    <h3>Dislikes: <span id ="dislike-counter">{{warehouse.dislikes}}</span></h3>
+		<button id='like-btn'>Like</button>
+		<button id='dislike-btn'>Dislike</button> --}}
+	</div>
+	<div id='pallet'></div>
+	<ul id='list'></ul>
+	<script src="/script.js"></script>
+</div>

@@ -29,9 +29,19 @@ app.get('/',(req,res)=>{
 app.get('/warehouses', async (req, res) => {
     const warehouses = await Warehouse.findAll();
     res.render('warehouses',{warehouses});
+    //res.json(warehouses);
 });
 
-
+app.get('/warehouses/:id', async (req, res) => {
+    
+    const warehouse = await Warehouse.findByPk(req.params.id, {include: {
+            model: Pallet,
+            include: Box
+        }
+    });
+    res.render('warehouse',{warehouse});
+    
+});
 
 
 app.listen(port, () => {

@@ -3,7 +3,7 @@
         "name": "NC warehouse",
          "location": "NC",
          "capacity": 300 ,
-        "image": "https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/England/Brighton/brighton-restaurants-hotel-du-vin-bistro.jpg",
+        "image": "https://www.netleaseadvisor.com/wp-content/uploads/2016/09/Verizon-net-lease-investmetn-800x364.jpg",
         "pallets": [
             {
                 "count_of_pallet": 44,
@@ -22,6 +22,30 @@
                 ]
             }
         ]
-        }
+        },
+        {
+            "name": "Dallas warehouse",
+             "location": "NC",
+             "capacity": 300 ,
+            "image": "https://www.netleaseadvisor.com/wp-content/uploads/2016/09/Verizon-net-lease-investmetn-800x364.jpg",
+            "pallets": [
+                {
+                    "count_of_pallet": 44,
+                     "capacity_of_pallet":444,
+                     "type_of_pallet":"small",
+                    "boxes": [
+                        {
+                            "box_count": 77,
+                            "staging_date": "2021-02-22"
+                        },
+                        {
+                            "box_count": 55,
+                            "staging_date": "2021-04-24"
+                        }
+                      
+                    ]
+                }
+            ]
+            }
 ]
 
