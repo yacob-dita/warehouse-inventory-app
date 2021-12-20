@@ -29,7 +29,7 @@ app.get('/',(req,res)=>{
 app.get('/warehouses', async (req, res) => {
     const warehouses = await Warehouse.findAll();
     res.render('warehouses',{warehouses});
-    //res.json(warehouses);
+    
 });
 
 app.get('/warehouses/:id', async (req, res) => {
@@ -39,10 +39,23 @@ app.get('/warehouses/:id', async (req, res) => {
             include: Box
         }
     });
-    res.render('warehouse',{warehouse});
-    
+     res.render('warehouse',{warehouse});
+    //res.json(warehouses);
 });
-
+app.get('/pallet', async (req, res) => {
+    const warehouse = await Warehouse.findAll();
+     //res.render('pallets',{pallets});
+     res.json(warehouse)
+});
+app.get('/pallet/:id', async (req, res) => {
+     const warehouse = await Warehouse.findByPk(req.params.id,
+        {include: {
+           model: Pallet,
+           include: Box}
+       })
+    //  res.render('pallet',{pallet});
+    res.json(warehouse);
+});
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);

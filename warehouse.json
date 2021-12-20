@@ -11,14 +11,10 @@
                  "type_of_pallet":"small",
                 "boxes": [
                     {
-                        "box_count": 77,
+                        "box_count": 90,
                         "staging_date": "2021-02-22"
-                    },
-                    {
-                        "box_count": 55,
-                        "staging_date": "2021-04-24"
                     }
-                  
+                 
                 ]
             }
         ]
@@ -27,7 +23,7 @@
             "name": "Dallas warehouse",
              "location": "NC",
              "capacity": 300 ,
-            "image": "https://www.netleaseadvisor.com/wp-content/uploads/2016/09/Verizon-net-lease-investmetn-800x364.jpg",
+            "image": "https://es.habcdn.com/photos/project/medium/naves-de-hormigon-prefabricado-comerciales-e-industriales-1194433.jpg",
             "pallets": [
                 {
                     "count_of_pallet": 44,
@@ -35,17 +31,34 @@
                      "type_of_pallet":"small",
                     "boxes": [
                         {
-                            "box_count": 77,
+                            "box_count": 79,
                             "staging_date": "2021-02-22"
-                        },
-                        {
-                            "box_count": 55,
-                            "staging_date": "2021-04-24"
                         }
+                       
                       
                     ]
                 }
             ]
-            }
+            },{
+                "name": "CA warehouse",
+                 "location": "NC",
+                 "capacity": 300 ,
+                "image": "https://penntexconstruction.com/wp-content/uploads/2020/07/103-Commerce_Exterior_aerial_web-700x600.jpg",
+                "pallets": [
+                    {
+                        "count_of_pallet": 44,
+                         "capacity_of_pallet":444,
+                         "type_of_pallet":"small",
+                        "boxes": [
+                            {
+                                "box_count": 77,
+                                "staging_date": "2021-02-22"
+                            }
+                          
+                          
+                        ]
+                    }
+                ]
+                }
 ]
 
