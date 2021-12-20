@@ -1,0 +1,200 @@
+body{
+    /* background-color: aquamarine; */
+    margin:0;
+    padding:0;
+}
+*{
+    margin:0;
+    padding:0
+}
+html{
+    padding:0;
+    margin:0;
+}
+#header-container{
+    width: 100%;
+}
+img.card-img-top{
+    min-width: 100%;
+}
+/* img {
+    max-width: 100%;
+} */
+#header-container a:hover{
+    background-color: black;
+    color: white
+}
+#header-container a{
+  
+    color: white;
+  
+}
+/* #banner-container .container-fluid{
+    width:100%;
+    background-size: initial;
+    margin-bottom: 50px;
+    height: 500px;
+    background-position-x: center;
+    position: relative;
+    top: -55;
+    z-index: -100;
+    background-size: cover;
+} */
+#banner-container img{
+  width:100%;
+
+  /* background-size: initial; */
+  /* margin-bottom: 50px; */
+  height: 500px;
+  /* background-position-x: center; */
+  position: relative;
+  top: -55;
+  z-index: -100;
+  /* background-size: cover; */
+}
+.container-fluid{
+    padding:0;
+    margin:0;
+}
+.navbar{
+    position: relative;
+    height: 100px;
+    z-index: 100;
+    width: 100%;
+    /* position:fixed; */
+    opacity: 0.9;
+}
+.card{
+    display:inline-block;
+    width: 420px;
+    height:340px;
+    margin: 15px;
+}
+/* div.card-body{
+  
+    width: 100px;
+    height:200px;
+} */
+
+
+span.navbar-toggler-icon{
+background-color: rgb(255, 255, 255);
+}
+div#singlewarehouse img{
+    margin: 0 100px;
+}
+
+div #all-btns{
+    
+    display: flex;
+    
+    margin: 0 100px;
+  
+}
+div #all-btns{
+   
+    margin-top: 80px;
+  
+}
+
+button#details-btn{
+margin:20px
+}
+button#pallet-btn{
+    margin:20px   
+}
+button#allwarehouse-btn{
+    margin:20px  ;
+    color:white; 
+}
+button#allwarehouse-btn a{
+
+    color:white; 
+}
+button#delete-btn{
+    margin:20px 
+}
+#foot-note{
+    display: flex;
+     
+}
+#footer-container{
+    background-color: black;
+    color : white;
+    width:100%;
+    position: relative;
+    margin-top: 300px;
+}
+
+/* login */
+
+/* body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color:black;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+/* loginend */
+
+@media (max-width:720px){
+    .navbar{
+        height: 200px;
+    }
+}
