@@ -4,13 +4,25 @@ class Warehouse extends Model {}
 
 Warehouse.init({
     name:{ 
-         type:DataTypes.STRING,
-          allowNull:false,
-          unique:true
+        type:DataTypes.STRING,
+        allowNull:false,
+        unique:true
     },
-    location: DataTypes.STRING, 
-    capacity: DataTypes.INTEGER,   
-    image: DataTypes.STRING   
+    location:{
+        type:DataTypes.STRING, 
+        allowNull:false,
+        unique:true
+    },
+    image: {
+        type:DataTypes.STRING,  
+        allowNull:false,
+        unique:true
+    },
+    capacity:{
+        type:DataTypes.INTEGER, 
+        allowNull:false,
+        unique:true}
+        
 }, {
     sequelize: db,
     timestamps: false,

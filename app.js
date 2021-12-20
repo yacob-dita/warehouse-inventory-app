@@ -72,6 +72,40 @@ app.get('/login', async (req, res) => {
     res.render('login');
     
 });
+app.get('/new-warehouse', async (req, res) => {
+    const warehouse = await Warehouse.findAll();
+     res.render('newwarehouseform');
+    //  res.json(warehouse)
+});
+app.get('/new-warehouse/:id', async (req, res) => {
+     const warehouse = await Warehouse.findByPk(req.params.id,
+        {include: {
+           model: Pallet,
+           include: Box}
+       })
+     res.render('newwarehouseform');
+    // res.json(warehouse);
+});
+
+app.post('/new-warehouse', async (req, res) => {
+    const newWarehouse = await Warehouse.create(req.body) 
+    let warehouseAlert = `${newWarehouse.name} created and added to your database`
+    const foundWarehouse = await Warehouse.findByPk(newWarehouse.id)
+    if(foundWarehouse){
+        res.render('newWarehouseForm',{warehouseAlert})
+    } else {
+        warehouseAlert = 'Failed to add Warehouse'
+        res.render('newWarehouseForm',{warehouseAlert})
+    } 
+});
+
+app.delete('/warehouses/:id', async (req,res) => {
+    const deletedWarehouse = await Warehouse.destroy({
+        where: {id:req.params.id}
+    })
+    res.send(deletedWarehouse ? 'Deleted' : 'Deletion Failed')
+});
+
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });
