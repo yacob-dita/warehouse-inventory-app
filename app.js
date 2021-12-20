@@ -56,7 +56,22 @@ app.get('/pallet/:id', async (req, res) => {
     //  res.render('pallet',{pallet});
     res.json(warehouse);
 });
+app.get('/pallets', async (req, res) => {
+    //const warehouses = await Warehouse.findAll();
+    res.render('pallets');
+    
+});
+app.get('/signup', async (req, res) => {
+    //const warehouses = await Warehouse.findAll();
+    res.render('signup');
+    
+});
 
+app.get('/login', async (req, res) => {
+    //const warehouses = await Warehouse.findAll();
+    res.render('login');
+    
+});
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });
