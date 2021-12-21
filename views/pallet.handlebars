@@ -1,0 +1,29 @@
+<header id ="header-container" class="container-fluid" > <nav class="navbar navbar-expand-lg navbar-black bg-dark w-100">
+  <a class="navbar-brand" href="#">Verizon</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/warehouses">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">About </a>
+      <a class="nav-item nav-link" href="#">Contact Us</a>
+      <a class="nav-item nav-link " href="/signup">Login</a>
+    </div>
+  </div>
+</nav></header>
+
+
+<div class="container"> <div class="card" >
+  <img class="card-img-top" src="https://mecaluxcom.cdnwm.com/documents/20197/488808/000-Categoria-Conventional-pallet-racking/d1f3e403-56c4-26a4-4688-9a1c0183bbbe?t=1522851809000&e=jpg&imageThumbnail=2" alt="warehouse image">
+  <div class="card-body">
+    <h5 class="card-title">Pallet Information</h5>
+   <ul>
+  <li>Existing Number of Pallet {{eachPallet.count_of_pallet}}</li>
+  <li>Capacity of each Pallet {{eachPallet.capacity_of_pallet}}</li>
+  <li>Type of Pallet {{eachPallet.type_of_pallet}}</li>
+</ul>
+    {{!-- <a href="/warehouses/{{id}}" class="btn btn-dark">View Warehouse</a> --}}
+     {{!-- <button id='btn-{{id}}' class="pallet-view-btn"><a href="/pallet/{{id}}">View Pallet</a></button> --}}
+  </div>
+</div></div>

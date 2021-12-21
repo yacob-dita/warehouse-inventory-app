@@ -48,17 +48,30 @@ app.get('/pallet', async (req, res) => {
      res.json(warehouse)
 });
 app.get('/pallet/:id', async (req, res) => {
-     const warehouse = await Warehouse.findByPk(req.params.id,
+     const pallet = await Warehouse.findByPk(req.params.id,
         {include: {
            model: Pallet,
            include: Box}
        })
-    //  res.render('pallet',{pallet});
-    res.json(warehouse);
+       let eachPallet =pallet.Pallets[0]
+     res.render('pallet',{eachPallet});
+     
+//  res.json(pallet.Pallets[0].count_of_pallet);
+//res.json(pallet);
 });
 app.get('/pallets', async (req, res) => {
+    const pallets = await Pallet.findAll();
+    res.render('pallets',{pallets});
+    
+});
+app.get('/newpalletform', async (req, res) => {
     //const warehouses = await Warehouse.findAll();
-    res.render('pallets');
+    res.render('newpalletform');
+    
+});
+app.get('/newboxform', async (req, res) => {
+    //const warehouses = await Warehouse.findAll();
+    res.render('newboxform');
     
 });
 app.get('/signup', async (req, res) => {
@@ -72,6 +85,48 @@ app.get('/login', async (req, res) => {
     res.render('login');
     
 });
+app.get('/newwarehouseform', async (req, res) => {
+    const warehouse = await Warehouse.findAll();
+     res.render('newwarehouseform',{warehouse});
+    //  res.json(warehouse)
+});
+app.get('/newwarehouseform/:id', async (req, res) => {
+     const warehouse = await Warehouse.findByPk(req.params.id,
+        {include: {
+           model: Pallet,
+           include: Box}
+       })
+     res.render('newwarehouseform',{warehouse});
+    // res.json(warehouse);
+});
+
+app.post('/newwarehouseform', async (req, res) => {
+    const newWarehouse = await Warehouse.create(req.body) 
+    let warehouseAlert = `${newWarehouse.name} created and added to your database`
+    const foundWarehouse = await Warehouse.findByPk(newWarehouse.id)
+    if(foundWarehouse){
+        res.render('newwarehouseform',{warehouseAlert})
+    } else {
+        warehouseAlert = 'Failed to add Warehouse'
+        res.render('newwarehouseform',{warehouseAlert})
+    } 
+});
+
+
+
+
+
+
+
+
+
+app.delete('/warehouses/:id', async (req,res) => {
+    const deletedWarehouse = await Warehouse.destroy({
+        where: {id:req.params.id}
+    })
+    res.send(deletedWarehouse ? 'Deleted' : 'Deletion Failed')
+});
+
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });

@@ -20,8 +20,8 @@
     <img src="https://www.netleaseadvisor.com/wp-content/uploads/2016/09/Verizon-net-lease-investmetn-800x364.jpg">
      </section>
      <section id="main-div" class="container">
-<section id ="warehouse-container"> 
 
+<section id ="warehouse-container"> 
 {{#each warehouses}} 
 		<div class="card" >
   <img class="card-img-top" src="{{image}}" alt="warehouse image">
@@ -29,25 +29,33 @@
     <h5 class="card-title">{{name}} </h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="/warehouses/{{id}}" class="btn btn-dark">View Warehouse</a>
+     <button id='btn-{{id}}' class="pallet-view-btn"><a href="/pallet/{{id}}">View Pallet</a></button>
   </div>
 </div>
 	{{/each}}
 
- 
 </section>
 
+<div class="add-warehouse-form container">
+  <button class="btn-success add-btn"><a href="/newwarehouseform" >Add New Warehouse</a>
+</button>  
+</div>
 
 </section>
+
+   
 
 <section id ="footer-container"class="container-fluid" > 
         <footer >    
       <div id="foot-note">         
       <a class="nav-item nav-link" href="#">About </a>
       <a class="nav-item nav-link" href="#">Contact Us</a>
-      <a class="nav-item nav-link " href="/signup">Login</a></div> 
-      </footer>
-
-      
+      <a class="nav-item nav-link" href="/signup">Login</a></div> 
+      </footer>      
 
 
+
+
+
+<script src="/script.js"></script>
 </section>

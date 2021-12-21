@@ -17,18 +17,26 @@
     <div id="singlewarehouse" > 
         	<h2>{{warehouse.name}}</h2>
 	<img class="item-img" src="{{warehouse.image}}" />
-    </div>    
+    </div>   
+
+    <div><h2> Warehouse Capacity: {{warehouse.capacity}} pallets</h2> </div> 
 	<div id="all-btns">
 		<button id='details-btn' class="btn-dark">Show Other warehouse</button>
 		<button id='pallet-btn' class="btn-dark">Show Pallets</button>       
         <button id='allwarehouse-btn' class="btn-dark"><a class="btn" href="/warehouses">Show All warehouses</a></button>
-        <button id ='delete-btn'class="btn-danger">Delete Warehouse</button>
-        <button id ='pallet-btn'class="btn-dark"><a class="btn" href="/pallets">Get Pallets</a></button>
+        {{!-- <button id ='delete-btn'class="btn-danger">Delete Warehouse</button> --}}
+        {{!-- <button class="btn-dark"><a class="btn" href="/pallets">Get Pallets</a></button> --}}
 		{{!-- <h3>Likes: <span id ="like-counter">{{warehouse.likes}}</span></h3>
 	    <h3>Dislikes: <span id ="dislike-counter">{{warehouse.dislikes}}</span></h3>
 		<button id='like-btn'>Like</button>
 		<button id='dislike-btn'>Dislike</button> --}}
     
+    <button class="btn-dark"><a href="/newpalletform" >Add New Pallet</a></button>
+
+
+{{!-- <div>
+    <a href="/newboxform" class="form-control">Add box</a>
+</div> --}}
 	</div>
 	<div id='pallet'></div>
 	<ul id='list'></ul>
