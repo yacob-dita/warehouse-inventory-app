@@ -29,30 +29,32 @@
     <h5 class="card-title">{{name}} </h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="/warehouses/{{id}}" class="btn btn-dark">View Warehouse</a>
+     <button id='btn-{{id}}' class="pallet-view-btn"><a href="/pallet/{{id}}">View Pallet</a></button>
   </div>
 </div>
 	{{/each}}
 
 </section>
 
+<div class="add-warehouse-form container">
+  <button class="btn-success add-btn"><a href="/newwarehouseform" >Add New Warehouse</a>
+</button>  
+</div>
 
 </section>
+
+   
 
 <section id ="footer-container"class="container-fluid" > 
         <footer >    
       <div id="foot-note">         
       <a class="nav-item nav-link" href="#">About </a>
       <a class="nav-item nav-link" href="#">Contact Us</a>
-      <a class="nav-item nav-link " href="/signup">Login</a></div> 
-      </footer>
+      <a class="nav-item nav-link" href="/signup">Login</a></div> 
+      </footer>      
 
-      
 
-<div class="navbar-nav">
-    <a href="/new-warehouse" class="form-control">Add New Warehouse</a>
-</div>
 
-<section id ="footer-container"> </section>
 
 
 <script src="/script.js"></script>

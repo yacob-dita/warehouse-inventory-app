@@ -23,12 +23,22 @@ console.log(id)
         palletList.append(palletLable)
         let pallet = document.createElement('ul')
         //for each menu item in that menu, create a list item
-        for(i of p.Boxes){
-            let item = document.createElement('li')
-            item.innerText = `Box Count:${i.box_count}: Staging Date:${i.staging_date}`
-            pallet.append(item)
-        }
-        palletList.append(pallet)
+        // for(i of p.Boxes){
+        //     let item = document.createElement('li')
+        //     item.innerText = `Box Count:${i.box_count}: Staging Date:${i.staging_date}`
+        //     pallet.append(item)
+        // }
+        // palletList.append(pallet)
     }
 
+})
+deleteBtn.addEventListener('click', async () => {
+    //get id from the current url path
+   const id = window.location.pathname.split('/warehouses/')[1]
+    //fetch the menu route from express for this id
+    let res = await fetch(`/warehouses/${id}`, {
+        method: 'DELETE',
+    })
+    console.log(res)
+    window.location.assign('/warehouses')
 })

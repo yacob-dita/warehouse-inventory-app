@@ -3,24 +3,32 @@ const { DataTypes, Model } = require('sequelize');
 class Warehouse extends Model {}
 
 Warehouse.init({
+    // name: DataTypes.STRING,   
+    
+    // location:DataTypes.STRING,      
+    
+    // image:DataTypes.STRING,        
+    
+    // capacity:DataTypes.INTEGER      
+
     name:{ 
         type:DataTypes.STRING,
-        allowNull:false,
+        
         unique:true
     },
     location:{
         type:DataTypes.STRING, 
-        allowNull:false,
+       
         unique:true
     },
     image: {
         type:DataTypes.STRING,  
-        allowNull:false,
-        unique:true
+        
+        unique:false
     },
     capacity:{
         type:DataTypes.INTEGER, 
-        allowNull:false,
+        
         unique:true}
         
 }, {

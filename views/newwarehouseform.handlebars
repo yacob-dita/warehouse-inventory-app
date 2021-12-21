@@ -1,53 +1,32 @@
-<form class="needs-validation" novalidate>
+
+
+
+<div id="pallet-form-div">
+    <form  action="/newwarehouseform" method="post">       
   <div class="form-row">
     <div class="col-md-4 mb-3">
-      <label for="validationCustom01">Warehouse name</label>
-      <input type="text" class="form-control" id="validationCustom01" placeholder="Warehouse name" required>
-      <div class="valid-feedback">
-        Please provide warehouse name
-      </div>
+      <label for="name">Warehouse name</label>
+      <input type="text" class="form-control" id="name"  name ="name" placeholder="Warehouse name" required>
+      
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationCustom02">Location</label>
-      <input type="text" class="form-control" id="validationCustom02" placeholder="Location" required>
-      <div class="valid-feedback">
-         Please provide location.
-      </div>
+      <label for="location">Location</label>
+      <input type="text" class="form-control" id="count_of_pallet" name =" count_of_pallet" placeholder="Location" required>
+     
     </div>
     <div class="col-md-3 mb-3">
-      <label for="validationCustom03">Capacity</label>
-      <input type="integer" class="form-control" id="validationCustom03" placeholder="Capacity" required>
-      <div class="invalid-feedback">
-        Please provide a capacity.
-      </div>
+      <label for="capacity">Capacity</label>
+      <input type="integer" class="form-control" id="capacity" name ="capacity" placeholder="Capacity" required>
+      
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="image">Image URL</label>
+      <input type="integer" class="form-control" id="image" name ="image" placeholder="image" required>
+      
     </div>
   </div>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustom04">Image URL</label>
-      <input type="text" class="form-control" id="validationCustom04" placeholder="Image URL" required>
-      <div class="invalid-feedback">
-        Please provide a valid url.
-      </div>
-    </div> 
-  </div>
+ 
   <button class="btn btn-dark" type="submit">Submit form</button>
 </form>
 
-<script>
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    var forms = document.getElementsByClassName('needs-validation');
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-</script>
+</div>

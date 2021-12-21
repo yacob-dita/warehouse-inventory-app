@@ -181,16 +181,27 @@ hr {
 }
 
 /* Add a blue text color to links */
-a {
+/* a {
   color: dodgerblue;
-}
+} */
 
 /* Set a grey background color and center the text of the "sign in" section */
 .signin {
   background-color: #f1f1f1;
   text-align: center;
 }
+.add-warehouse-form{
+    margin-top:200px;
+    /* position:relative; */
+  z-index: -200;
 
+
+}
+.add-btn a {
+  color:white;
+
+
+}
 /* loginend */
 
 @media (max-width:720px){
