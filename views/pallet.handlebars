@@ -19,11 +19,30 @@
   <div class="card-body">
     <h5 class="card-title">Pallet Information</h5>
    <ul>
-  <li>Existing Number of Pallet {{eachPallet.count_of_pallet}}</li>
-  <li>Capacity of each Pallet {{eachPallet.capacity_of_pallet}}</li>
-  <li>Type of Pallet {{eachPallet.type_of_pallet}}</li>
+  <li>Existing Number of Pallet {{warehouse.Pallets.length}}</li>
+  
+  {{!-- <li>Capacity of each Pallet {{eachPallet.capacity_of_pallet}}</li> 
+  <li>Type of Pallet {{eachPallet.type_of_pallet}}</li> --}}
 </ul>
+{{#each warehouse.Pallets}} 
+		<div>
+<ul>
+  <li>Pallet with pallet capacity: {{capacity_of_pallet}}</li>
+  <li>
+   <button><a href="/newboxform/{{id}}" >Add new box to the pallet</a></button> 
+</li>
+</ul>
+</div>
+	{{/each}}
+
     {{!-- <a href="/warehouses/{{id}}" class="btn btn-dark">View Warehouse</a> --}}
      {{!-- <button id='btn-{{id}}' class="pallet-view-btn"><a href="/pallet/{{id}}">View Pallet</a></button> --}}
   </div>
+  <button class="btn-dark"><a href="/newpalletform/{{warehouse.id}}" >Add New Pallet</a></button>
+
+
 </div></div>
+
+
+
+   

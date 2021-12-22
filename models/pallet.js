@@ -5,9 +5,9 @@ const { DataTypes, Model} = require('sequelize')
 class Pallet extends Model {}
 
 Pallet.init({ 
-    count_of_pallet: DataTypes.INTEGER,
+    
     capacity_of_pallet: DataTypes.INTEGER,  
-    type_of_pallet:DataTypes.STRING
+   
   },
   {
     sequelize:db,
