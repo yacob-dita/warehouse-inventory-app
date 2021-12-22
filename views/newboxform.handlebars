@@ -1,20 +1,39 @@
-<div id="box-form-div">
-    <form  action="/newboxform" method="post">       
+
+<header id ="header-container" class="container-fluid" > <nav class="navbar navbar-expand-lg navbar-black bg-dark w-100">
+  <a class="navbar-brand" href="/warehouses">Verizon</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/warehouses">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">About </a>
+      <a class="nav-item nav-link" href="#">Contact Us</a>
+      <a class="nav-item nav-link " href="/signup">Login</a>
+    </div>
+  </div>
+</nav></header>
+
+
+<div id="box-form-div" class="container">
+    <form  action="/newboxform/{{pallet.id}}" method="post">       
   <div class="form-row">
-    <div class="col-md-4 mb-3">
+    {{!-- <div class="col-md-4 mb-3">
       <label for="box_count">Box Count</label>
       <input type="text" class="form-control" id="box_count"  name ="box_count" placeholder="type of pallet" required>
       
-    </div>
+    </div> --}}
     <div class="col-md-4 mb-3">
-      <label for="staging_date">staging Date</label>
-      <input type="text" class="form-control" id="staging_date" name =" staging_date" placeholder="Location" required>
+      <label for="box_name">Box Name</label>
+      <input type="text" class="form-control" id="box_name" name ="box_name" placeholder="box name" required>
      
     </div>
     
   </div>
  
   <button class="btn btn-dark" type="submit">Submit form</button>
+  <button class="btn btn-dark" type="submit"><a href="/pallet/{{pallet.id}}">Back</a></button>
+      <div> <h3>{{boxAlert}}</h3></div>
 </form>
 
 </div>

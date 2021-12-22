@@ -203,6 +203,10 @@ hr {
 
 }
 /* loginend */
+.pallet-view-btn a {
+    color:white
+}
+.btn-dark a{ color:white}
 
 @media (max-width:720px){
     .navbar{
