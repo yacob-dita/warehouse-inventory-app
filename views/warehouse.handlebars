@@ -1,40 +1,75 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <header id ="header-container" class="container-fluid" > <nav class="navbar navbar-expand-lg navbar-black bg-dark w-100">
-  <a class="navbar-brand" href="#">Verizon</a>
+  <a class="navbar-brand" href="#"><img src = "https://www.verizon.com/about/sites/default/files/news-media/verizon-news-media-colorbox.png" style="height: 74px; width: 132px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/warehouses">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="#">About </a>
       <a class="nav-item nav-link" href="#">Contact Us</a>
       <a class="nav-item nav-link " href="/signup">Login</a>
     </div>
   </div>
 </nav></header>
+    
+  </head>
 
-<div class="container">
+  
+{{!-- -------------------------------------------------------- --}}
+
+<body style="background-color:rgb(235, 220, 192);text-align:center">
+  
+
+<div class="container" style="background-color:rgb(235, 220, 192);text-align:center">
     <div id="singlewarehouse" > 
-        	<h2>{{warehouse.name}}</h2>
+        	<h2>You are into "{{warehouse.name}}"</h2>
 	<img class="item-img" src="{{warehouse.image}}" />
     </div>   
 
-    <div><h2> Warehouse Capacity: {{warehouse.capacity}} pallets</h2> </div> 
+    <div><button class="new-btn"><a style="color: white;text-decoration: none;font-size: x-large;"> Warehouse contains capacity of {{warehouse.capacity}} pallets</a>
+</button>  
+       </div> 
 	{{!-- <div id="all-btns"> --}}
 		{{!-- <button id='details-btn' class="btn-dark">Show Other warehouse</button> --}}
 		{{!-- <button id='pallet-btn' class="btn-dark">Show Pallets</button>        --}}
-        <button id='allwarehouse-btn' class="btn-dark"><a class="btn" href="/warehouses">Show All warehouses</a></button>
-        {{!-- <button id ='delete-btn'class="btn-danger">Delete Warehouse</button> --}}
-        {{!-- <button class="btn-dark"><a class="btn" href="/pallets">Get Pallets</a></button> --}}
-		{{!-- <h3>Likes: <span id ="like-counter">{{warehouse.likes}}</span></h3>
-	    <h3>Dislikes: <span id ="dislike-counter">{{warehouse.dislikes}}</span></h3>
-		<button id='like-btn'>Like</button>
-		<button id='dislike-btn'>Dislike</button> --}}
-      <button id='btn-{{id}}' class="pallet-view-btn btn-dark"><a href="/pallet/{{warehouse.id}}">View Pallets</a></button>
-    
 
 
 
-
-	<script src="/script.js"></script>
+    <div class="card" style="width: 30rem;col d-flex;justify-content-center;/* height: 200px; */display: inline-block;align-items: center;/* justify-content: center; background-color: black; */">
+  <img src="https://palletmanagementgroup.ca/wp-content/uploads/2017/10/palletmngmt5pallets.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h4 class="card-title"> Pallets are used to pile up, store or transport Boxes.</h4>
+    <p class="card-text">Add or Remove Pallets and Boxes </p>
+    <a href="/pallet/{{warehouse.id}}" class="btn btn-primary" style="background-color: black;border-color: gray;">View all pallets</a>
+    <a href="/warehouses" class="btn btn-primary" style="background-color: black;border-color: gray;"> View all warehouses</a>
+     {{!-- <button id='allwarehouse-btn' class="btn-dark"><a class="btn" href="/warehouses">Show All warehouses</a></button> --}}
+  </div>
 </div>
+</body>
+
+{{!-- =---------------------------------- --}}
+ 
+{{!-- <section class="container-fluid footer-container"  > 
+        <footer >    
+      <div id="foot-note">         
+      <a class="nav-item nav-link" href="#">About </a>
+      <a class="nav-item nav-link" href="#">Contact Us</a>
+      <a class="nav-item nav-link" href="/signup">Login</a></div> 
+      </footer>      
+
+<script src="/script.js"></script>
+</section>  --}}
+
+
