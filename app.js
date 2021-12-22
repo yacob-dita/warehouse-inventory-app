@@ -1,5 +1,10 @@
 const express = require("express");
-
+require('dotenv').config()
+const PORT = process.env.PORT;
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
 const Handlebars = require('handlebars')
 const expressHandlebars = require('express-handlebars')
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
@@ -7,6 +12,7 @@ const {sequelize}=require('./db')
 const Warehouse = require('./models/warehouse');
 const Pallet = require('./models/pallet');
 const Box = require('./models/box');
+const Employee = require('./models/employee')
 
 const initialiseDb = require('./initialiseDb');
 initialiseDb();
@@ -15,7 +21,12 @@ const app = express();
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(express.static('public'));
-
+app.use(cookieParser());
+app.use(session({
+    secret: process.env.SECRET_KEY,
+    resave: false,
+    saveUninitialized: true,
+}));
 const handlebars = expressHandlebars({
     handlebars : allowInsecurePrototypeAccess(Handlebars)
 })
@@ -53,11 +64,10 @@ app.get('/pallet/:id', async (req, res) => {
            model: Pallet,
            include: Box}
        })
-    // let eachPallet =pallet.Pallets[0]
+    
      res.render('pallet',{warehouse});
      
-//  res.json(pallet.Pallets[0].count_of_pallet);
-//res.json(pallet);
+
 });
 app.get('/pallets', async (req, res) => {
     const pallets = await Pallet.findAll();
@@ -74,17 +84,17 @@ app.get('/newboxform', async (req, res) => {
     res.render('newboxform');
     
 });
-app.get('/signup', async (req, res) => {
-    //const warehouses = await Warehouse.findAll();
-    res.render('signup');
+// app.get('/signup', async (req, res) => {
+//     //const warehouses = await Warehouse.findAll();
+//     res.render('signup');
     
-});
+// });
 
-app.get('/login', async (req, res) => {
-    //const warehouses = await Warehouse.findAll();
-    res.render('login');
+// app.get('/login', async (req, res) => {
+//     //const warehouses = await Warehouse.findAll();
+//     res.render('login');
     
-});
+// });
 app.get('/newwarehouseform', async (req, res) => {
     const warehouse = await Warehouse.findAll();
      res.render('newwarehouseform',{warehouse});
@@ -217,6 +227,86 @@ app.delete('/box/:id', async (req,res) => {
     res.render('box', {boxs})
 });
 
+//00000000000000000000000000000000000000000000000000000000000000000000
+//GET new Employee signup form
+app.get('/signup', async (req, res) => {
+    //render signup form template
+    res.render('signup')
+})
+
+//GET user logout
+app.get('/logout', async (req, res) => {
+    req.session.destroy(function(err) {
+        res.redirect('/warehouses')
+      })
+})
+
+//Post Route triggered by signup form submit action
+app.post('/signup', async (req,res) =>{
+    //access the username, password, and confirmPassword from the form
+    const username = req.body.username
+    const password = req.body.password
+    const confirm = req.body.confirm
+    //check that the two password entries match
+    if(password!==confirm){
+        //if not, signup fails
+        let userAlert = 'Signup Failed'
+        res.render('signup',{userAlert})
+    } else {
+        bcrypt.hash(password, saltRounds, async function (err,hash){
+            //Add Employee to db based on html form data with hashed password
+            const newUser = await Employee.create({'username':username, 'password':hash})
+            //Create a userAlert to pass to the template
+            let userAlert = `Welcome, ${newUser.username}!`
+            //Find newUser in db by id
+            const foundUser = await Employee.findByPk(newUser.id)
+            if(foundUser){
+                //set session user to match username from db
+                req.session.userid = foundUser.id
+                req.session.username = foundUser.username
+                //re-render template
+                res.render('signup',{userAlert})
+            } else {
+                userAlert = 'Signup Failed'
+                res.render('signup',{userAlert})
+            }
+        })
+    }
+})
+
+//GET Returning Employee Sign in form
+app.get('/login', async (req, res) => {
+    res.render('login')
+})
+
+//Post Route triggered by form submit action
+app.post('/login', async (req,res) =>{
+    const thisUser = await Employee.findOne({
+        where: {
+            username: req.body.username
+        }
+    })
+    if(!thisUser){
+        let userAlert = 'Sign-in Failed'
+        res.render('login',{userAlert})
+    } else {
+        bcrypt.compare(req.body.password, thisUser.password, async function (err,result){
+            if (result){
+                //set session user
+                req.session.userid = thisUser.id
+                req.session.username = thisUser.username
+                //re-render template
+                let userAlert = `Welcome back, ${thisUser.username}`
+                res.render('login',{userAlert})
+            } else {
+                let userAlert = 'Sign-in Failed'
+                res.render('login',{userAlert})
+            }
+        })
+    }
+})
+
+//0000000000000000000000000000000000000000000000000000000000000000000
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });

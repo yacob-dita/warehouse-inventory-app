@@ -38,12 +38,21 @@
 	<img class="item-img" src="{{warehouse.image}}" />
     </div>   
 
+<<<<<<< HEAD
     <div><button class="new-btn"><a style="color: white;text-decoration: none;font-size: x-large;"> Warehouse contains capacity of {{warehouse.capacity}} pallets</a>
 </button>  
        </div> 
 	{{!-- <div id="all-btns"> --}}
 		{{!-- <button id='details-btn' class="btn-dark">Show Other warehouse</button> --}}
 		{{!-- <button id='pallet-btn' class="btn-dark">Show Pallets</button>        --}}
+=======
+    <div><h2> Warehouse Capacity: {{warehouse.capacity}} pallets</h2> </div> 
+
+        <button id='allwarehouse-btn' class="btn-dark"><a class="btn" href="/warehouses">Show All warehouses</a></button>
+        
+      <button id='btn-{{id}}' class="pallet-view-btn btn-dark"><a href="/pallet/{{warehouse.id}}">View Pallets</a></button>
+    
+>>>>>>> f53d61b597ac553fab0ba955da46dbd0e9c9922c
 
 
 
