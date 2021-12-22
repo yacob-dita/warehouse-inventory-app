@@ -197,7 +197,14 @@ app.delete('/pallet/:id', async (req,res) => {
 });
 
 
+app.delete('/warehouses/:id', async (req,res) => {
+    const deleteWarehouse= await Warehouse.destroy({
+        where: {id:req.params.id}
+    })
 
+    const warehouses = await Warehouse.findAll();
+    res.render('warehouses', {warehouses})
+});
 
 
 

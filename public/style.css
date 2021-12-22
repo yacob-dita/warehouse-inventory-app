@@ -199,15 +199,15 @@ hr {
 }
 .add-btn a {
   color:white;
-
-
 }
 /* loginend */
 .pallet-view-btn a {
     color:white
 }
 .btn-dark a{ color:white}
-
+.btn-add-box{
+  margin:15px;
+}
 @media (max-width:720px){
     .navbar{
         height: 200px;
