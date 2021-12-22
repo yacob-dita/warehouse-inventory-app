@@ -16,7 +16,7 @@
 
 <div class="container"> <div class="card" >
   <img class="card-img-top" src="https://mecaluxcom.cdnwm.com/documents/20197/488808/000-Categoria-Conventional-pallet-racking/d1f3e403-56c4-26a4-4688-9a1c0183bbbe?t=1522851809000&e=jpg&imageThumbnail=2" alt="warehouse image">
-  <div class="card-body">
+  <div class="card-body pallet-container">
     <h3 class="card-title">Pallet Information</h3>
    <ul>
   <h4>Existing Number of Pallet: {{warehouse.Pallets.length}}</h4>
@@ -24,19 +24,38 @@
   {{!-- <li>Capacity of each Pallet {{eachPallet.capacity_of_pallet}}</li> 
   <li>Type of Pallet {{eachPallet.type_of_pallet}}</li> --}}
 </ul>
+<script>
+  let devAlert = "";
+   let alertLable="" ;
+</script>
 {{#each warehouse.Pallets}} 
 		<div>
 <ul>
   <li><h5> Pallet id:  {{id}} with pallet capacity: {{capacity_of_pallet}} </h5></li>
   
    <button class="btn-dark btn-add-box"><a href="/newboxform/{{id}}" >Add new box to the pallet</a></button>
- <h5> This pallet contains {{warehouse.Boxes.length}} boxes</h5>
+ {{!-- <div id="alert"> <h5>This pallet contains {{Boxes.length}} boxes </h5> <div> --}}
+ <div id="alert-{{id}}" > </div>
+
  <button class="btn-dark view-boxes"> <a href="/box/{{id}}"> veiw Boxes </a></button> 
    
    <button id='btn-pallet-{{id}}' class="delete-pallet-btn btn-danger" onclick="deletePallet({{id}})">Remove Pallet</button>
+<script>
+   devAlert = document.getElementById("alert-{{id}}")
+    alertLable=document.createElement('h5')
+  if({{Boxes.length}}==0)
+  {alertLable.innerText = "Alert this pallet is empty need to be removed !";
+  alertLable.style.color="red"
+   devAlert.append(alertLable)}
+ else {alertLable.innerText = "This pallet contains {{Boxes.length}} boxes"; 
+     devAlert.append(alertLable)
+     }
+     console.log({{id}})
+</script>
 
 </ul>
 </div>
+
 	{{/each}}
 
     {{!-- <a href="/warehouses/{{id}}" class="btn btn-dark">View Warehouse</a> --}}
@@ -49,9 +68,11 @@
   
 
 </div>
+
+
+
   <script src="/script.js"></script>
 </div>
-
 
 
    

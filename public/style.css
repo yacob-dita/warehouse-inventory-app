@@ -243,6 +243,12 @@ hr {
 .btn-add-box{
   margin:15px;
 }
+.btn-box-container ul{
+  border: 1px solid black;
+}
+.pallet-container ul {
+  border: 1px solid black;
+}
 @media (max-width:720px){
     .navbar{
         height: 200px;
