@@ -176,11 +176,10 @@ app.post('/newboxform/:id', async (req, res) => {
 
 
 app.get('/box/:id', async (req, res) => {
-     const pallet = await Pallet.findByPk(req.params.id)
-    //     {include: {
-    //        model: Pallet,
-    //        include: Box}
-    //    })
+     const pallet = await Pallet.findByPk(req.params.id,
+        {
+           include: Box
+       })
    console.log(pallet)
      res.render('box',{pallet});
      

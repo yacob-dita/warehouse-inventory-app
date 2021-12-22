@@ -42,3 +42,14 @@ deleteBtn.addEventListener('click', async () => {
     console.log(res)
     window.location.assign('/warehouses')
 })
+
+
+async function deletePallet(id){
+  
+    let res = await fetch(`/restaurants/${id}` ,{
+        method: 'DELETE'
+    })
+    console.log(res)
+ 
+    window.location.assign('/restaurants')
+}

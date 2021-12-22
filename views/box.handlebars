@@ -1,3 +1,10 @@
    
    
-   <button><a href="/newboxform/{{id}}" >Add new box to the pallet</a></button> 
+  <div> 
+{{#each pallet.Boxes}}
+<ul><li>Box Name:{{box_name}} </li></ul>
+{{/each}}
+</li>
+</ul>
+</div>
+	
