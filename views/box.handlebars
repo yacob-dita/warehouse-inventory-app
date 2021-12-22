@@ -15,7 +15,7 @@
    
   <div class="container"> 
 {{#each pallet.Boxes}}
-<ul><li>Box Name:{{box_name}} </li>
+<ul><li><h5>Box id: Box-{{id}} Box Name: {{box_name}}</h5> </li>
 <button id='btn-box-{{id}}' class="delete-box-btn btn-danger" onclick="deleteBox({{id}})">Delete</button>
 </ul>
 

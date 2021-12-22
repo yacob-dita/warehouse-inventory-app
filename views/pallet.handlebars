@@ -17,9 +17,9 @@
 <div class="container"> <div class="card" >
   <img class="card-img-top" src="https://mecaluxcom.cdnwm.com/documents/20197/488808/000-Categoria-Conventional-pallet-racking/d1f3e403-56c4-26a4-4688-9a1c0183bbbe?t=1522851809000&e=jpg&imageThumbnail=2" alt="warehouse image">
   <div class="card-body">
-    <h5 class="card-title">Pallet Information</h5>
+    <h3 class="card-title">Pallet Information</h3>
    <ul>
-  <li>Existing Number of Pallet {{warehouse.Pallets.length}}</li>
+  <h4>Existing Number of Pallet: {{warehouse.Pallets.length}}</h4>
   
   {{!-- <li>Capacity of each Pallet {{eachPallet.capacity_of_pallet}}</li> 
   <li>Type of Pallet {{eachPallet.type_of_pallet}}</li> --}}
@@ -27,13 +27,14 @@
 {{#each warehouse.Pallets}} 
 		<div>
 <ul>
-  <li>Pallet with pallet capacity: {{capacity_of_pallet}}</li>
-  <li>
-   <button><a href="/newboxform/{{id}}" >Add new box to the pallet</a></button>
+  <li><h5> Pallet id:  {{id}} with pallet capacity: {{capacity_of_pallet}} </h5></li>
+  
+   <button class="btn-dark btn-add-box"><a href="/newboxform/{{id}}" >Add new box to the pallet</a></button>
+ <h5> This pallet contains {{warehouse.Boxes.length}} boxes</h5>
  <button class="btn-dark view-boxes"> <a href="/box/{{id}}"> veiw Boxes </a></button> 
    
    <button id='btn-pallet-{{id}}' class="delete-pallet-btn btn-danger" onclick="deletePallet({{id}})">Remove Pallet</button>
-</li>
+
 </ul>
 </div>
 	{{/each}}

@@ -69,12 +69,47 @@ img.card-img-top{
     width: 420px;
     height:340px;
     margin: 15px;
+    text-align-last: center;
+}
+
+.btn-primarys {
+  color:red;
+  background-color: black;
+  border-color: #0d6efd;
+  margin-top: 20px;
+  width: 70%;
+  vertical-align: middle;
+  margin-left: 10%;
+}
+
+.new-btn{
+  background-color: black;
+  border-color: brown;
+  border-width: initial;
+  margin-top: 20px;
+  vertical-align: middle;
+  margin-left: 10%;
+  width: 80%;
+  height: 50px;
+}
+
+.new-card {
+  position: relative;
+  /* display: flex; */
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0.25rem;
 }
 /* div.card-body{
   
     width: 100px;
     height:200px;
 } */
+
 
 
 span.navbar-toggler-icon{
@@ -123,7 +158,7 @@ button#delete-btn{
     color : white;
     width:100%;
     position: relative;
-    margin-top: 300px;
+    /* margin-top: 300px; */
 }
 
 /* login */
@@ -199,15 +234,15 @@ hr {
 }
 .add-btn a {
   color:white;
-
-
 }
 /* loginend */
 .pallet-view-btn a {
     color:white
 }
 .btn-dark a{ color:white}
-
+.btn-add-box{
+  margin:15px;
+}
 @media (max-width:720px){
     .navbar{
         height: 200px;
