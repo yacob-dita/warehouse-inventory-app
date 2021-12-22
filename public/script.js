@@ -32,24 +32,33 @@ console.log(id)
     }
 
 })
-deleteBtn.addEventListener('click', async () => {
-    //get id from the current url path
-   const id = window.location.pathname.split('/warehouses/')[1]
-    //fetch the menu route from express for this id
-    let res = await fetch(`/warehouses/${id}`, {
-        method: 'DELETE',
-    })
-    console.log(res)
-    window.location.assign('/warehouses')
-})
+// deleteBtn.addEventListener('click', async () => {
+//     //get id from the current url path
+//    const id = window.location.pathname.split('/warehouses/')[1]
+//     //fetch the menu route from express for this id
+//     let res = await fetch(`/warehouses/${id}`, {
+//         method: 'DELETE',
+//     })
+//     console.log(res)
+//     window.location.assign('/warehouses')
+// })
 
 
-async function deletePallet(id){
+async function deleteBox(id){
   
-    let res = await fetch(`/restaurants/${id}` ,{
+    let res = await fetch(`/box/${id}` ,{
         method: 'DELETE'
     })
     console.log(res)
  
-    window.location.assign('/restaurants')
+    //window.location.assign('/restaurants')
+}
+async function deletePallet(id){
+  
+    let res = await fetch(`/pallet/${id}` ,{
+        method: 'DELETE'
+    })
+    console.log(res)
+ 
+    //window.location.assign('/restaurants')
 }
