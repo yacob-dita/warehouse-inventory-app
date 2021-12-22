@@ -168,9 +168,9 @@ app.post('/newboxform/:id', async (req, res) => {
 
 // app.get('/box', async (req, res) => {
    
-//     const pallet = await Pallet.findAll()
+//     const box = await Box.findAll()
       
-//      res.render('box');
+//      res.render('box',{box});
 // });
 
 
@@ -187,18 +187,27 @@ app.get('/box/:id', async (req, res) => {
 //res.json(pallet);
 });
 
-
-
-
-
-
-
-
-app.delete('/warehouses/:id', async (req,res) => {
-    const deletedWarehouse = await Warehouse.destroy({
+app.delete('/pallet/:id', async (req,res) => {
+    const deletePallet = await Pallet.destroy({
         where: {id:req.params.id}
     })
-    res.send(deletedWarehouse ? 'Deleted' : 'Deletion Failed')
+
+    const pallets = await Pallet.findAll();
+    res.render('pallet', {pallets})
+});
+
+
+
+
+
+
+app.delete('/box/:id', async (req,res) => {
+    const deleteBox = await Box.destroy({
+        where: {id:req.params.id}
+    })
+
+    const boxs = await Box.findAll();
+    res.render('box', {boxs})
 });
 
 app.listen(port, () => {
