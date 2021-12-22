@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<button id='btn-{{id}}' class="About-btn"></button>
+    <div class="about-container"></div>
+<style>
+* {box-sizing: border-box; width: 60em;}
+body {font-family: Georgia, serif;
+     margin-inline-start: 280px; }
+p {
+    position: relative; top: 5px;
+    font-family: Georgia, serif;
+    margin-inline-start: 280px; 
+    writing-mode: horizontal-tb;
+    margin-inline-end: 5px;
+    writing-mode: horizontal-tb;
+    }
+.mySlides {display: flex;}
+img {vertical-align: top;
+    justify-content: center;
+    width: 900px;
+    height: 500px;
+    background:rgb(212, 216, 211);
+    border: thick double #63ce32;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 2000px;
+  position: relative;
+  Padding: 1em;
+  top: -30px; left: 70px;
+  margin: 5% 0;
+}
+
+/* Caption text */
+.text {
+  color: #0e0d0df3;
+  font-size: 20px;
+  font-family: cursive;
+  position: absolute;
+  bottom: -120px;
+  width: 100%;
+  text-align: left;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #0f0f0fde;
+  font-size: 15px;
+  padding: 10px 12px;
+  position: absolute;
+  top: -20px; left: 700px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: rgb(107, 143, 99);
+  transition: background-color 1s ease;
+  position: relative;
+  top: -110px; left: 750px;
+}
+
+.active {
+  background-color: #2e2b2b;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1s;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+#foot-note{
+    display: flex; 
+    }
+
+#footer-container{
+    background-color: rgb(119, 170, 114);
+    color : rgb(255, 255, 255);
+    width:100%;
+    position: relative;
+    margin-top: 60px;
+    }
+
+@-webkit-keyframes fade {
+  from {opacity: .8} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .8} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<!-- <h2>Hello Dear Visitors!</h2> -->
+<h3><p>Take A Tour While You Learn About Us</p></h3>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="https://www.legalraasta.com/blog/wp-content/uploads/2019/03/Inventory-Management.png" style="width:80%">
+</div> 
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="https://splicetoday.imgix.net/uploads/posts/photos/28466/robots-efficiently-sorting-hundreds-parcels-per-hour-3d-rendering_41470-3492.jpg?ixlib=rails-2.1.2&auto=format&dpr=2&fit=clamp&w=400&widths=%5B544%2C%20768%2C%20992%2C%201200%5D&s=d6fc50e23dc0dbceeaa8b5b29d6dc7d5" style="width:80%">
+ </div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="https://www.wisys.com/wp-content/uploads/2020/02/cost-of-too-much-inventory.jpg" style="width:80%"> 
+</div>
+
+<div
+    class="text">The Verizon warehouse is a US company that is customer driven, responsive, flexible, and cost effective.</br>We operate a variety of distribution centers incorporating a range of storage methodologies.</br>We accomplish our visions through employee pride and commitment.
+</div>
+</div>
+<br>
+
+<div style="text-align:left">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000);
+}
+</script>
+
+</body>
+</html> 
+
+<section id ="footer-container"class="container-fluid" > 
+    <footer >    
+  <div id="foot-note">         
+  <a class="nav-item nav-link" href="/about.html">About </a>
+  <a class="nav-item nav-link" href="/contactus.html">Contact Us</a>
+  <a class="nav-item nav-link" href="/signup">Login</a></div> 
+  </footer>      
+
+<script src="/script.js"></script>
+</section>

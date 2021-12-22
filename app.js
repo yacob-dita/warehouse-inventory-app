@@ -85,6 +85,12 @@ app.get('/login', async (req, res) => {
     res.render('login');
     
 });
+
+app.get('/about', async (req, res) => {
+    res.json('about');
+    
+});
+
 app.get('/newwarehouseform', async (req, res) => {
     const warehouse = await Warehouse.findAll();
      res.render('newwarehouseform',{warehouse});
