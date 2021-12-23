@@ -153,14 +153,20 @@ button#delete-btn{
     margin:20px 
 }
 #foot-note{
-    display: flex;
+    display: flex;   
      
 }
+#foot-note a{
+  color: white;  
+   
+}
+
 .footer-container{
     background-color: black;
     color : white;
     width:100%;
     position: relative;
+
     /* margin-top: 300px; */
 }
 #footer {

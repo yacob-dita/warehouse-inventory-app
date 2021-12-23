@@ -16,8 +16,7 @@ Warehouse.hasMany(Employee)
 Employee.belongsTo(Warehouse)
 await db.sync();
 }
-//export models with added associations
-//module.exports = {Warehouse, Pallet, Box}
+
 module.exports = initialiseDb;
 
 

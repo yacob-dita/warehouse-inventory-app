@@ -84,17 +84,7 @@ app.get('/newboxform', async (req, res) => {
     res.render('newboxform');
     
 });
-// app.get('/signup', async (req, res) => {
-//     //const warehouses = await Warehouse.findAll();
-//     res.render('signup');
-    
-// });
 
-// app.get('/login', async (req, res) => {
-//     //const warehouses = await Warehouse.findAll();
-//     res.render('login');
-    
-// });
 app.get('/newwarehouseform', async (req, res) => {
     const warehouse = await Warehouse.findAll();
      res.render('newwarehouseform',{warehouse});
@@ -176,14 +166,6 @@ app.post('/newboxform/:id', async (req, res) => {
 
 });
 
-// app.get('/box', async (req, res) => {
-   
-//     const box = await Box.findAll()
-      
-//      res.render('box',{box});
-// });
-
-
 
 app.get('/box/:id', async (req, res) => {
      const pallet = await Pallet.findByPk(req.params.id,
@@ -193,8 +175,7 @@ app.get('/box/:id', async (req, res) => {
    console.log(pallet)
      res.render('box',{pallet});
      
-//  res.json(pallet.Pallets[0].count_of_pallet);
-//res.json(pallet);
+
 });
 
 app.delete('/pallet/:id', async (req,res) => {
@@ -227,7 +208,7 @@ app.delete('/box/:id', async (req,res) => {
     res.render('box', {boxs})
 });
 
-//00000000000000000000000000000000000000000000000000000000000000000000
+//00000000000000000000000singup and login000000000000000000000000000000000000000000000
 //GET new Employee signup form
 app.get('/signup', async (req, res) => {
     //render signup form template
