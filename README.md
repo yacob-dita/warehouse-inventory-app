@@ -34,7 +34,7 @@
 - w3schools
 
 
-*Dependencies used*
+*Dependencies*
 
 - "@handlebars/allow-prototype-access": "^1.0.5",
 - "bcrypt": "^5.0.1",
@@ -78,9 +78,7 @@
 
 *Images*
 
-<img src="https://user-images.githubusercontent.com/94479058/147204428-5e9b7fe4-f7d0-474a-ae11-9e03e0041bb7.png" width="360"> Kanban    <img src="https://user-images.githubusercontent.com/94479058/147204509-cfeff2aa-3c91-4727-a3dc-a09ee6dab8a0.png" width="360"> ERD    
-
-<img src="https://user-images.githubusercontent.com/94479058/147204531-a5a832b5-2c0f-4370-9e78-958b598fbe10.png" width="360"> Sequence diagram  
+<img src="https://user-images.githubusercontent.com/94479058/147204509-cfeff2aa-3c91-4727-a3dc-a09ee6dab8a0.png" width="360"> ERD <img src="https://user-images.githubusercontent.com/94479058/147204531-a5a832b5-2c0f-4370-9e78-958b598fbe10.png" width="360"> Sequence diagram  
 
 
 *Helpful Resouces*
