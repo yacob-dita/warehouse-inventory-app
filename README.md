@@ -24,7 +24,7 @@
 - Distribution of project tasks between team members
 
 
-*Built With*
+*Built With Tools*
 
 - Kanban
 - Draw.io
@@ -64,7 +64,7 @@
 
 *Production*
 
-- Created a dynamic web page for warehouses management system
+- Created a dynamic web page for warehouses inventory management system
 - Forms for the creation of new warehouse, pallet and box
 - View and delete options for warehouses, pallets, boxes and employees
 - Inventory for added pallets and boxes into the warehouse using the GUI
@@ -99,7 +99,7 @@
 
 *Future Work*
 
-- Customer facing server made to display features as per the customer's request
+- Establish privilege levels for managers and employees
 
 
 *Team Members* 
