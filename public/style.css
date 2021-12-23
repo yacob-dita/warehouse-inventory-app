@@ -29,6 +29,9 @@ img.card-img-top{
     color: white;
   
 }
+#complete{
+  display: inline-block;
+}
 /* #banner-container .container-fluid{
     width:100%;
     background-size: initial;
@@ -260,4 +263,11 @@ hr {
     .navbar{
         height: 200px;
     }
+}
+.btn-primary1{
+  color: #fff;
+  background-color: black;
+  border-color: gray;
+  margin-top: 10px;
+  width: 350px;
 }
