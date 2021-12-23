@@ -12,7 +12,6 @@
 - As a warehouse employee, I am notified when a palette is empty and must be removed.
 
 
-
 *Getting Started*
 
 - Outlined plan on [kanban](https://ermileb.atlassian.net/jira/software/projects/WIA/boards/2)
@@ -23,7 +22,6 @@
 - Initialized of a new node project with its relevant dependencies
 - Revision of scripts in package.json
 - Distribution of project tasks between team members
-
 
 
 *Built With*
@@ -46,7 +44,6 @@
 - Bootstrap
 
 
-
 *Dependencies*
 
 - "@handlebars/allow-prototype-access": "^1.0.5",
@@ -65,7 +62,6 @@
 - "sqlite3": "^5.0.2"
 
 
-
 *Production*
 
 - Created a dynamic web page for warehouses management system
@@ -74,7 +70,6 @@
 - Inventory for added pallets and boxes into the warehouse using the GUI
 - Inventory for removed pallets and boxes from the warehouse using the GUI
 - Signup and login forms for employees
-
 
 
 *Images*
@@ -97,12 +92,14 @@
 - [YouTube](https://www.google.com/search?q=youtube&rlz=1C5GCEM_enUS979US980&ei=4y_EYaCSH6ivggfj05yYCA&ved=0ahUKEwjgj-Wdvfn0AhWol-AKHeMpB4MQ4dUDCA4&uact=5&oq=youtube&gs_lcp=Cgdnd3Mtd2l6EAMyEQguEIAEELEDEIMBEMcBENEDMgUIABCABDIICAAQgAQQsQMyCAgAEIAEELEDMggIABCABBCxAzIECAAQAzIICAAQgAQQsQMyCAgAEIAEELEDMgsIABCABBCxAxCDATIICAAQgAQQsQM6BQgAEJECOggILhCABBCxAzoLCC4QgAQQsQMQgwE6CwguEIAEEMcBEK8BOggIABCxAxCDAToFCC4QgAQ6CwguEIAEEMcBENEDOgcILhCxAxBDOgQIABAKOgcIABCxAxAKOgQILhAKOhMILhCxAxCDARCxAxDHARDRAxAKOgYIABAKEAM6CggAELEDEIMBEAo6EAguELEDEIMBEMcBENEDEApKBAhBGABKBAhGGABQAFjQM2CwOmgGcAJ4AIABwQKIAYcRkgEHMS45LjIuMZgBAKABAcABAQ&sclient=gws-wiz)
 
 
+*Work In Progress*
+
+- Create a dynamic web page for managers and employees
+
 
 *Future Work*
 
-- Sign up and log in forms for employers
 - Customer facing server made to display features as per the customer's request
-
 
 
 *Team Members* 
