@@ -26,7 +26,7 @@
 
 *Tools used*
 
-- Kanban
+- Jira
 - Draw.io
 - Github
 - Visual Studio Code
