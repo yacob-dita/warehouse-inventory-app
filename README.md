@@ -24,7 +24,7 @@
 - Distribution of project tasks between team members
 
 
-*Built With Tools*
+*Tools used*
 
 - Kanban
 - Draw.io
