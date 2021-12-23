@@ -29,6 +29,9 @@ img.card-img-top{
     color: white;
   
 }
+#complete{
+  display: inline-block;
+}
 /* #banner-container .container-fluid{
     width:100%;
     background-size: initial;
@@ -150,14 +153,20 @@ button#delete-btn{
     margin:20px 
 }
 #foot-note{
-    display: flex;
+    display: flex;   
      
 }
+#foot-note a{
+  color: white;  
+   
+}
+
 .footer-container{
     background-color: black;
     color : white;
     width:100%;
     position: relative;
+
     /* margin-top: 300px; */
 }
 #footer {
@@ -260,4 +269,11 @@ hr {
     .navbar{
         height: 200px;
     }
+}
+.btn-primary1{
+  color: #fff;
+  background-color: black;
+  border-color: gray;
+  margin-top: 10px;
+  width: 350px;
 }
