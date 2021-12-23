@@ -16,21 +16,11 @@
 <div id="pallet-form-div">
     <form  action="/newpalletform/{{warehouse.id}}" method="post">       
   <div class="form-row">
-    {{!-- <div class="col-md-4 mb-3">
-      <label for="type_of_pallet">Type of Pallet</label>
-      <input type="text" class="form-control" id="type_of_pallet"  name ="type_of_pallet" placeholder="type of pallet" required>
-      
-    </div> --}}
-    {{!-- <div class="col-md-4 mb-3">
-      <label for="count_of_pallet">Count of Pallet</label>
-      <input type="text" class="form-control" id="count_of_pallet" name =" count_of_pallet" placeholder="Location" required>
-     
-    </div> --}}
+    
     <div class="col-md-3 mb-3 container">
       <label for="capacity_of_pallet">Capacity of Pallets</label>
       <input type="integer" class="form-control" id="capacity_of_pallet" name ="capacity_of_pallet" placeholder="Capacity" required>
-      {{!-- <label for="capacity_of_pallet">Warehouse Id</label>
-      <input type="integer" class="form-control" id="WarehouseId" name ="WarehouseId" placeholder="WarehouseId" value="{{warehouse.id}}" > --}}
+      
       <button class="btn btn-dark" type="submit">Submit form</button>
       <button class="btn btn-dark" type="submit"><a href="/pallet/{{warehouse.id}}">Back</a></button>
       <div> <h3>{{palletAlert}}</h3></div>
