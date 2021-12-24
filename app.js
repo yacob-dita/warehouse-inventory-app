@@ -97,7 +97,7 @@ app.get('/newwarehouseform/:id', async (req, res) => {
            include: Box}
        })
      res.render('newwarehouseform',{warehouse});
-    // res.json(warehouse);
+
 });
 app.get('/newpalletform/:id', async (req, res) => {
     const warehouse = await Warehouse.findByPk(req.params.id,
@@ -106,7 +106,7 @@ app.get('/newpalletform/:id', async (req, res) => {
            include: Box}
        })
      res.render('newpalletform',{warehouse});
-    //  res.json(warehouse)
+   
 });
 app.post('/newwarehouseform', async (req, res) => {
     const newWarehouse = await Warehouse.create(req.body) 
