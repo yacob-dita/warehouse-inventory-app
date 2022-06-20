@@ -30,8 +30,8 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.static('public'));
 app.use(cookieParser());
 app.use(session({
-secret: process.env.SECRET_KEY,
-    //secret:"SECRET",
+//secret: process.env.SECRET_KEY,
+    secret:"SECRET",
     resave: false,
     saveUninitialized: true,
 }));
