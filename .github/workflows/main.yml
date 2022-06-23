@@ -1,13 +1,13 @@
 name: CI to Docker Hub 
+
 on:
   push:
-    branches: [ main ]
+    branches: [ doctest ]
 
 jobs:
 
   build:
     runs-on: ubuntu-latest
-    
     steps:
 
       - name: Check Out Repo 
@@ -15,7 +15,7 @@ jobs:
         
       - name: Install Dependancies
         run: npm i jest
-        
+    
       - name: Run tests
         run: npm run test
 
@@ -38,15 +38,15 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/test:latest
           target: test
-  
-      - name: Build and push prod
-        id: docker_build_prod
+
+      - name: Build and push
+        id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/warehouse-inventory-app:latest
-          
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/warehouse-inventory-app:latest 
+
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
